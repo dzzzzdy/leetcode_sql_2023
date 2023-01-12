@@ -18,3 +18,11 @@ WHERE name NOT IN(
     C.id =  O.customerID)
 
 #Solution 3
+#ID is a unique value, so ID works in all situation
+SELECT name AS Customers 
+FROM Customers
+WHERE id NOT IN(
+    SELECT customerId 
+    FROM Customers C
+    JOIN Orders O ON
+    C.id =  O.customerID)
