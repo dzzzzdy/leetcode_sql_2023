@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+SELECT DISTINCT num AS ConsecutiveNums
+FROM(
+    SELECT num, LEAD(num) OVER() AS 'lead', LAG(num) OVER() AS 'lag'
+    FROM logs) AS temp
+WHERE temp.num = temp.lead
+AND   temp.num = temp.lag
