@@ -1,4 +1,5 @@
 #Am I creative?
+#After checking the answer, everybody uses this trick lol......
 SELECT name
 FROM(
 SELECT c.name, COUNT(c.id) AS vote
